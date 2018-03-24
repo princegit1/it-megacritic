@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+  <!DOCTYPE struts PUBLIC 
+	"-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+	"http://struts.apache.org/dtds/struts-2.0.dtd">
+
+<struts>
+
+<!-- <constant name="struts.enable.SlashesInActionNames" value="true"/>
+<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+<constant name="struts.patternMatcher" value="regex" /> -->
+<constant name="struts.enable.SlashesInActionNames" value="true"/>
+<constant name="struts.mapper.alwaysSelectFullNamespace" value="false"/>
+<constant name="struts.action.extension" value=",html"/> 
+<!-- <constant name="struts.patternMatcher" value="namedVariable"/> -->
+<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+<constant name="struts.devMode" value="true" />
+<package name="default" namespace="/" extends="struts-default">
+	
+    <action name="home" class="com.indiatoday.megacritic.action.MegacriticHomeAction" method="getHomePage">
+    <result name="success">/jsp/home/index.jsp</result>
+   </action>
+   
+   <action name="videos" class="com.indiatoday.megacritic.action.ListPageAction" method="videoList">
+    <result name="success">/jsp/home/videoGallery.jsp</result>
+   </action>
+   
+    <action name="moviestrailers" class="com.indiatoday.megacritic.action.ListPageAction" method="videoList">
+    <result name="success">/jsp/home/moviesTrailers.jsp</result>
+     </action>	
+     
+      <action name="songs" class="com.indiatoday.megacritic.action.ListPageAction" method="getSongsList">
+    <result name="success">/jsp/home/songsList.jsp</result>
+     </action>		
+     
+     <action name="/video/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="videoPlay">
+    <result name="success">/jsp/video/videoPlay.jsp</result>
+     </action>
+     
+      <action name="/song/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="songPlay">
+    <result name="success">/jsp/video/songPlay.jsp</result>
+     </action>
+     
+     <action name="critic-review" class="com.indiatoday.megacritic.action.MegaCriticReviewAction" method="getCriticReviewData">
+    <result name="success">/jsp/review/megaCriticReview.jsp</result>
+     </action>
+     
+     <action name="user-review" class="com.indiatoday.megacritic.action.MegaCriticReviewAction" method="getUserReviewData">
+    <result name="success">/jsp/review/megaUserReview.jsp</result>
+     </action>
+     
+      <action name="news/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="storyDetail">
+    <result name="success">/jsp/home/newsStory.jsp</result>
+     </action>
+     
+    <action name="newslist" class="com.indiatoday.megacritic.action.ListPageAction" method="getNewsListData">
+    <result name="success">/jsp/home/newsList.jsp</result>
+     </action>
+     
+     <action name="newslist" class="com.indiatoday.megacritic.action.ListPageAction" method="getNewsListData">
+    <result name="success">/jsp/home/newsList.jsp</result>
+     </action>
+     
+       <action name="jsp/*/*" class="com.indiatoday.megacritic.action.ListPageAction" method="getNewsListData">
+     <result name="success">/jsp/search/advanced_search.jsp</result>
+     </action>
+     
+       <action name="photoplay" class="com.indiatoday.megacritic.action.DetailPageAction" method="photoPlay">
+    <result name="success">/jsp/home/photoPlay.jsp</result>
+     </action>
+     
+    <action name="gallery/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="photoPlay">
+    <result name="success">/jsp/home/photoPlay.jsp</result>
+     </action>
+      
+    <action name="nextchanges" class="com.indiatoday.megacritic.action.ListPageAction" method="getNextChangeDataList">
+    <result name="success">/jsp/home/nextChangesList.jsp</result>
+     </action>
+     
+     <action name="upcommingmovies" class="com.indiatoday.megacritic.action.ListPageAction" method="getUpComingMoviesDataList">
+    <result name="success">/jsp/home/upCommingMoviesList.jsp</result>
+     </action>
+     
+     
+      <action name="upcommingmovies/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="upCommingMoviesDetail">
+    <result name="success">/jsp/home/upCommingMoviesDetail.jsp</result>
+     </action>
+       <action name="nextchanges/*/*/*" class="com.indiatoday.megacritic.action.DetailPageAction" method="nextChangesDetail">
+      <result name="success">/jsp/home/nextChangesDetail.jsp</result>
+     </action>
+     
+     
+     
+    
+	</package>
+</struts>

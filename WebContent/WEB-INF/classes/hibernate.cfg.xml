@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+  <session-factory name="GlobalSessionFactory">
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="hibernate.connection.url">jdbc:mysql://10.10.25.242:3306/itoday</property>
+        <property name="hibernate.connection.username">itgd</property>
+        <property name="hibernate.connection.password">itgd@nd@123</property>
+        <property name="hibernate.dialect">org.hibernate.dialect.MySQLDialect</property>
+		<property name="hibernate.show_sql">true</property> 
+    	<property name="hibernate.current_session_context_class">thread</property>
+    	<property name="hibernate.validator.apply_to_ddl">false</property>
+        <property name="hibernate.validator.autoregister_listeners">false</property>
+        <property name="hibernate.transaction.factory_class">org.hibernate.transaction.JDBCTransactionFactory</property>
+		<property name="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</property>
+    	<property name="hibernate.connection.pool_size">5</property> 
+		<property name="hibernate.c3p0.min_size">1</property>
+		<property name="hibernate.c3p0.max_size">10</property>	
+        <property name="hibernate.c3p0.max_statements">50</property>
+    	<property name="hibernate.current_session_context_class">thread</property>
+    	<property name="autoReconnect">true</property>
+    	<property name="hibernate.c3p0.idle_test_period">30</property>
+    	<property name="hibernate.c3p0.timeout">300</property>
+    	<property name="hibernate.c3p0.preferredTestQuery">SELECT 1</property>    	
+    	<property name="hibernate.c3p0.testOnBorrow">true</property>  
+		<property name="hibernate.c3p0.testOnReturn">true</property>	
+	  
+	    
+		<mapping  class="com.indiatoday.megacritic.domain.Category"/>
+		<mapping  class="com.indiatoday.megacritic.domain.Content"/>
+		<mapping  class="com.indiatoday.megacritic.domain.ArticleSection"/>
+		<mapping  class="com.indiatoday.megacritic.domain.Section"/>
+		<mapping  class="com.indiatoday.megacritic.domain.VideoGallery"/>
+		<mapping  class="com.indiatoday.megacritic.domain.PhotoCategory"/>
+	</session-factory>
+
+</hibernate-configuration>
